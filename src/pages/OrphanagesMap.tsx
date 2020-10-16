@@ -14,7 +14,7 @@ export default function OrphanagesMap () {
     const navigation = useNavigation();
     
     function handleNavigateToOrphanageDetails() {
-        navigation.navigate('OrphanagesDetails')
+        navigation.navigate('OrphanageDetails')
     }
 
     function handleNavigateToCreateOrphanage() {
