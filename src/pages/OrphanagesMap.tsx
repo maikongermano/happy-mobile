@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
@@ -20,11 +20,12 @@ export default function OrphanagesMap () {
 
     const [orphanages, setOrphanages] = useState<OrphanageItem[]>([]);
 
-    useEffect(() => {
+    // sempre que a tela for focada carregar dados api
+    useFocusEffect(() => {
       api.get('orphanages').then(response => {
         setOrphanages(response.data);
       })
-    }, []);
+    });
     
     function handleNavigateToOrphanageDetails(id: number) {
         navigation.navigate('OrphanageDetails', { id })
