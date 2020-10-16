@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
 
 
 import mapMarker from '../images/map-marker.png';
+
 
 
 export default function OrphanagesMap () {
@@ -55,9 +57,9 @@ export default function OrphanagesMap () {
           <Text style={styles.footerText}>
             2 orfanatos encontrados
           </Text>
-          <TouchableOpacity style={styles.createOrphanageButton} onPress={handleNavigateToCreateOrphanage}>
+          <RectButton style={styles.createOrphanageButton} onPress={handleNavigateToCreateOrphanage}>
             <Feather name="plus" size={20} color='#FFF'/>
-          </TouchableOpacity>
+          </RectButton>
         </View>
       </View>
     )
